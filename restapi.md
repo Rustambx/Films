@@ -11,9 +11,9 @@ php artisan passport:install<br>
 {
     "username" : "email пользователя",
     "password" : "password пользователя"
-    "grant_type" : "password"
-    "client_id" : "client id"
-    "client_secret" : "client secret"
+    "grant_type" : "password",
+    "client_id" : "client id",
+    "client_secret" : "client secret",
 }
 ```
 **Response-type:** json
@@ -35,7 +35,7 @@ php artisan passport:install<br>
 ```json 
 {
     "status": "Фильм успешно получен",
-    "film" : Информация о фильме
+    "film" : "Информация о фильме",
 }
 ```
 **3. Получить список всех фильмов с возможностью пагинации, сортировки, фильтрации по жанру**<br>
@@ -46,8 +46,8 @@ php artisan passport:install<br>
 ```json  
 {
     "order" : "Сортировка",
-    "paginate" : "Количество элементов в пагинации"
-    "genres" : "Жанр"
+    "paginate" : "Количество элементов в пагинации",
+    "genres" : "Жанр",
 }
 ```
 <br>**Response-type:** json
@@ -55,7 +55,7 @@ php artisan passport:install<br>
 ```json 
 {
     "status": "Фильмы успешно получены",
-    "films": Информация о фильмах
+    "films": "Информация о фильмах",
 }
 ```
 **4. Добавление**<br>
