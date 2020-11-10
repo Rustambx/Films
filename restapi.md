@@ -10,7 +10,7 @@ php artisan passport:install<br>
 ```json  
 {
     "username" : "email пользователя",
-    "password" : "password пользователя"
+    "password" : "password пользователя",
     "grant_type" : "password",
     "client_id" : "client id",
     "client_secret" : "client secret",
@@ -38,7 +38,70 @@ php artisan passport:install<br>
     "film" : "Информация о фильме",
 }
 ```
-**3. Получить список всех фильмов с возможностью пагинации, сортировки, фильтрации по жанру**<br>
+**3. Получить все жанры**<br>
+**Url: flag.loc/api/genres**
+<br>**Request-type:** GET
+<br>**Header:** authorization = Bearer access_token
+<br>**Response-type:** json
+<br>**Response:** 
+```json 
+{
+    "status": "Жанры успешно получены",
+    "genres" : "Информация о фильме",
+}
+```
+**4. Добавление жанра**<br>
+**Url:** flag.loc/api/genre/create
+<br>**Request-type:** POST
+<br>**Header:** authorization = Bearer access_token
+<br>**Body:**
+```json  
+{
+    "name" : "Название",
+}
+```
+<br>**Response-type:** json
+<br>**Response:** 
+```json 
+{
+    "status": {
+        "status": "Жанр добавлен"
+    }
+}
+```
+**5. Редактирование жанра**<br>
+**Url:** flag.loc/api/genre/update/{id}
+<br>**Request-type:** POST
+<br>**Header:** authorization = Bearer access_token
+<br>**Body:**
+```json  
+{
+    "name" : "Название",
+}
+```
+<br>**Response-type:** json
+<br>**Response:** 
+```json 
+{
+    "status": {
+        "status": "Жанр обновлен"
+    }
+}
+```
+**6. Удаление жанра**<br>
+**Url:** flag.loc/api/genre/delete/{id}
+<br>**Request-type:** POST
+<br>**Header:** authorization = Bearer access_token
+<br>**Response-type:** json
+<br>**Response:** 
+```json 
+{
+    "status": {
+        "status": "Жанр удален"
+    }
+}
+```
+**7. Получить список всех фильмов с возможностью пагинации, сортировки, фильтрации по жанру**<br>
 **Url:** flag.loc/api/get/films
 <br>**Request-type:** POST
 <br>**Header:** authorization = Bearer access_token
@@ -58,7 +121,7 @@ php artisan passport:install<br>
     "films": "Информация о фильмах",
 }
 ```
-**4. Добавление**<br>
+**8. Добавление фильма**<br>
 **Url:** flag.loc/api/film/create
 <br>**Request-type:** POST
 <br>**Body:** 
@@ -81,7 +144,7 @@ php artisan passport:install<br>
     }
 }
 ```
-**5. Редактирование**<br>
+**9. Редактирование фильма**<br>
 **Url:** flag.loc/api/film/update/{id}
 <br>**Request-type:** POST
 <br>**Body:** 
@@ -104,7 +167,7 @@ php artisan passport:install<br>
     }
 }
 ```
-**6. Удаление**<br>
+**10. Удаление фильма**<br>
 **Url:** flag.loc/api/film/delete/{id}
 <br>**Request-type:** POST
 <br>**Header:** authorization = Bearer access_token
